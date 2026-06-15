@@ -1,0 +1,29 @@
+{
+  "name": "remote-adb-tailscale-skill",
+  "description": "Claude Code marketplace for the Remote ADB Tailscale skill.",
+  "version": "1.0.0",
+  "owner": {
+    "name": "Jay"
+  },
+  "plugins": [
+    {
+      "name": "remote-adb-tailscale",
+      "source": "./",
+      "description": "Connect Android ADB through Tailscale and switch the device to TCP ADB on port 5555.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jay"
+      },
+      "homepage": "https://github.com/bloooi/remote-adb-tailscale-skill",
+      "repository": "https://github.com/bloooi/remote-adb-tailscale-skill",
+      "license": "MIT",
+      "keywords": [
+        "android",
+        "adb",
+        "tailscale",
+        "remote-debugging"
+      ],
+      "category": "development"
+    }
+  ]
+}

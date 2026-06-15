@@ -29,6 +29,36 @@ Wireless Debugging은 부트스트랩 단계에서만 사용합니다. 임시 Wi
 
 Android 기기에는 반드시 Tailscale 앱이 설치되어 있어야 합니다. 이 방식은 ADB를 실행하는 호스트와 Android 기기가 같은 Tailscale 계정 또는 tailnet에 연결되어 있을 때만 동작합니다.
 
+## Claude Code에 설치하기
+
+Claude Code에서는 이 저장소를 plugin marketplace로 추가해 설치할 수 있습니다.
+
+```text
+/plugin marketplace add bloooi/remote-adb-tailscale-skill
+/plugin install remote-adb-tailscale@remote-adb-tailscale-skill
+/reload-plugins
+```
+
+설치 후 다음 명령으로 스킬을 호출합니다.
+
+```text
+/remote-adb-tailscale:remote-adb-tailscale
+```
+
+또는 `SKILL.md`만 복사해서 standalone Claude Code skill로 사용할 수도 있습니다.
+
+```bash
+mkdir -p ~/.claude/skills/remote-adb-tailscale
+curl -L https://raw.githubusercontent.com/bloooi/remote-adb-tailscale-skill/main/SKILL.md \
+  -o ~/.claude/skills/remote-adb-tailscale/SKILL.md
+```
+
+이후 Claude Code를 재시작하거나 `/reload-plugins`를 실행한 뒤 다음 명령으로 호출합니다.
+
+```text
+/remote-adb-tailscale
+```
+
 ## 보안 주의사항
 
 이 워크플로는 Tailscale tailnet을 활용합니다. 포트 `5555`가 공개 인터넷에 노출되지 않는다고 해서 안전하다고 가정하면 안 됩니다.
@@ -45,7 +75,10 @@ Android 기기에는 반드시 Tailscale 앱이 설치되어 있어야 합니다
 ## 저장소 구성
 
 ```text
+.claude-plugin/plugin.json
+.claude-plugin/marketplace.json
 SKILL.md
+skills/remote-adb-tailscale/SKILL.md
 agents/openai.yaml
 README.md
 README-ko.md

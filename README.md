@@ -29,6 +29,36 @@ Wireless Debugging is used only as the bootstrap step. After pairing and connect
 
 The Android device must have the Tailscale app installed. This only works when the Android device is connected to the same Tailscale account or tailnet as the host that will run ADB.
 
+## Install In Claude Code
+
+Claude Code can install this repository as a plugin marketplace:
+
+```text
+/plugin marketplace add bloooi/remote-adb-tailscale-skill
+/plugin install remote-adb-tailscale@remote-adb-tailscale-skill
+/reload-plugins
+```
+
+After installation, invoke the skill with:
+
+```text
+/remote-adb-tailscale:remote-adb-tailscale
+```
+
+You can also use the skill as a standalone Claude Code skill by copying only `SKILL.md` into a skill directory:
+
+```bash
+mkdir -p ~/.claude/skills/remote-adb-tailscale
+curl -L https://raw.githubusercontent.com/bloooi/remote-adb-tailscale-skill/main/SKILL.md \
+  -o ~/.claude/skills/remote-adb-tailscale/SKILL.md
+```
+
+Then restart Claude Code or run `/reload-plugins`, and invoke it as:
+
+```text
+/remote-adb-tailscale
+```
+
 ## Security Notes
 
 This workflow uses your Tailscale tailnet. Do not treat port `5555` as harmless just because it is not exposed to the public internet.
@@ -45,7 +75,10 @@ In other words:
 ## Repository Contents
 
 ```text
+.claude-plugin/plugin.json
+.claude-plugin/marketplace.json
 SKILL.md
+skills/remote-adb-tailscale/SKILL.md
 agents/openai.yaml
 README.md
 README-ko.md

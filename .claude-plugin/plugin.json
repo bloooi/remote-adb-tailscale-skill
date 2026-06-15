@@ -1,0 +1,19 @@
+{
+  "name": "remote-adb-tailscale",
+  "version": "1.0.0",
+  "description": "Connect Android ADB through Tailscale and switch the device to TCP ADB on port 5555.",
+  "author": {
+    "name": "Jay"
+  },
+  "homepage": "https://github.com/bloooi/remote-adb-tailscale-skill",
+  "repository": "https://github.com/bloooi/remote-adb-tailscale-skill",
+  "license": "MIT",
+  "skills": "./skills/",
+  "agents": [],
+  "keywords": [
+    "android",
+    "adb",
+    "tailscale",
+    "remote-debugging"
+  ]
+}
