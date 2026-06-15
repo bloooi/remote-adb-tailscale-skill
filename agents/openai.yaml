@@ -1,0 +1,4 @@
+interface:
+  display_name: "Remote ADB Tailscale"
+  short_description: "Connect Android ADB through Tailscale"
+  default_prompt: "Use $remote-adb-tailscale to connect my Android device over Tailscale with ADB."
