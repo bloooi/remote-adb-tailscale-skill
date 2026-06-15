@@ -1,5 +1,7 @@
 # Remote ADB Tailscale Skill
 
+[English](README.md) | [한국어](README-ko.md)
+
 Codex skill for connecting to an Android device with remote ADB over Tailscale.
 
 This skill guides the full flow from Android Wireless Debugging bootstrap to stable TCP ADB on port `5555` through the device's Tailscale IP.
@@ -46,6 +48,7 @@ In other words:
 SKILL.md
 agents/openai.yaml
 README.md
+README-ko.md
 LICENSE
 ```
 
